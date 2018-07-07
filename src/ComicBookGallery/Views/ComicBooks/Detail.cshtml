@@ -2,6 +2,7 @@
 
     Layout = null;
 
+    
 
 }
 
@@ -15,7 +16,25 @@
     </head>
         <body>
             <div>
-                <h1> Hello from our view!</h1>
+                <h1>@ViewBag.seriesTitle</h1>
+                <h2>@ViewBag.issueNumber</h2>
+                
+                <h5>Description</h5>
+                <div>@Html.Raw(ViewBag.description)</div>
+                
+                <h5>artist</h5>
+                <div>
+                    <ul>
+                        @foreach (var artist in ViewBag.artists)
+                        {
+                            
+
+                            <li>@artist</li>
+
+                        }
+                    </ul>
+
+                </div>
             </div>
 
         </body>
