@@ -9,10 +9,22 @@ namespace ComicBookGallery.Controllers
     public class ComicBooksController: Controller
     {
         //adding an action method
-        public string Detail()
+        public ActionResult Detail()
         {
 
-            return "hello from the comic books world";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+            {
+                return new RedirectResult("/");
+
+
+            }
+            return new ContentResult()
+            {
+                Content = "hello from the comic books world"
+
+
+            };
+            
 
         }
     }
